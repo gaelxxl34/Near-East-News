@@ -47,16 +47,18 @@ class RegisterJournalistController extends Controller
 
 
     
-   
+    public function showForm()
+    {
+        return view('upload_form');
+    }
     public function registerJournalist(Request $request)
     {
-        
         $request->validate([
             'firstName' => 'required|string',
             'lastName' => 'required|string',
             'email' => 'required|email',
             'password' => 'required|min:6',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
     
         try {
@@ -67,10 +69,11 @@ class RegisterJournalistController extends Controller
                 'password' => $request->password,
                 'disabled' => false,
             ];
-
+    
+           
+    
             $createdUser = $this->auth->createUser($userProperties);
     
-            
             // Initialize Firebase Storage
             $storage = app('firebase.storage');
             $bucket = $storage->getBucket(); // Use the default bucket
