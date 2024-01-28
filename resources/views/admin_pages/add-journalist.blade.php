@@ -100,7 +100,7 @@
                 <div class="card shadow">
                     <div class="card-body">
 
-                    <form action="{{ route('upload.journalist') }}" method="post" enctype="multipart/form-data">
+                    <form  method="post" action="{{ route('upload.journalist') }}" enctype="multipart/form-data">
                         @csrf
 
                         
@@ -163,53 +163,20 @@
         });
 
             // JavaScript to Toggle Email and Logout Button Visibility
-    document.getElementById('emailCircle').onclick = function() {
-        var userDetails = document.getElementById('userDetails');
-        if (userDetails.style.display === 'none') {
-            userDetails.style.display = 'block';
-        } else {
-            userDetails.style.display = 'none';
-        }
-    }
+        document.getElementById('emailCircle').onclick = function() {
+            var userDetails = document.getElementById('userDetails');
+            if (userDetails.style.display === 'none') {
+                userDetails.style.display = 'block';
+            } else {
+                userDetails.style.display = 'none';
+            }
+            }
 
     </script>
 
    
 
-<script>
-function previewImage() {
-    var preview = document.getElementById('imagePreview');
-    var fileInput = document.getElementById('imageInput');
-    var file = fileInput.files[0];
-    var reader = new FileReader();
 
-    reader.onloadend = function () {
-        preview.src = reader.result;
-        preview.style.display = 'block';
-    }
-
-    if (file) {
-        reader.readAsDataURL(file);
-        truncateFileName(fileInput);
-    } else {
-        preview.src = "";
-        preview.style.display = 'none';
-    }
-}
-
-function truncateFileName(input) {
-    var fileName = input.files[0].name;
-    var maxFileNameLength = Math.floor(input.offsetWidth / 10); // Assuming average character width
-    if (fileName.length > maxFileNameLength) {
-        var truncatedFileName = fileName.substring(0, maxFileNameLength - 3) + '...';
-        input.nextElementSibling.textContent = truncatedFileName;
-    } else {
-        input.nextElementSibling.textContent = fileName;
-    }
-}
-
-
-</script>
 @endsection
 </body>
 

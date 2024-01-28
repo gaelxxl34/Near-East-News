@@ -108,7 +108,7 @@
                                         <option value="Algeria">Algeria</option>
                                         <option value="Iran">Iran</option>
                                         <option value="Iraq">Iraq</option>
-                                        <option value="Israel">Israel</option>
+                                        
                                         <option value="Jordan">Jordan</option>
                                         <option value="Libya">Libya</option>
                                         <option value="Bahrain">Bahrain</option>
@@ -124,18 +124,10 @@
                                     <label for="category">Category:</label>
                                     <select name="category" id="category" class="form-control" required>
                                         <option value="Top Stories">Top Stories</option>
-                                        <option value="Top 5 Highlights">Top 5 Highlights</option>
+                                        <option value="Highlights">Highlights</option>
                                         <option value="Business">Business</option>
                                         <option value="Corporate">Corporate</option>
                                         <option value="Sports">Sports</option>
-                                        <option value="Health">Health</option>
-                                        <option value="Education">Education</option>
-                                        <option value="Science">Science</option>
-                                        <option value="Technology">Technology</option>
-                                        <option value="Foods">Foods</option>
-                                        <option value="Entertainment">Entertainment</option>
-                                        <option value="Travel">Travel</option>
-                                        <option value="Lifestyle">Lifestyle</option>
                                     </select>
                                 </div>
 

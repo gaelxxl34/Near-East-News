@@ -11,6 +11,8 @@ use Kreait\Firebase\Auth\UserRecord;
 use App\Http\Controllers\Controller;
 use Kreait\Firebase\Firestore;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Log;
+
 
 
 
@@ -45,18 +47,16 @@ class RegisterJournalistController extends Controller
 
 
     
-    public function showForm()
-    {
-        return view('upload_form');
-    }
+   
     public function registerJournalist(Request $request)
     {
+        
         $request->validate([
             'firstName' => 'required|string',
             'lastName' => 'required|string',
             'email' => 'required|email',
             'password' => 'required|min:6',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
     
         try {
@@ -67,11 +67,10 @@ class RegisterJournalistController extends Controller
                 'password' => $request->password,
                 'disabled' => false,
             ];
-    
-           
-    
+
             $createdUser = $this->auth->createUser($userProperties);
     
+            
             // Initialize Firebase Storage
             $storage = app('firebase.storage');
             $bucket = $storage->getBucket(); // Use the default bucket
@@ -96,6 +95,12 @@ class RegisterJournalistController extends Controller
             return redirect()->intended('/admin/journalist-list'); // Redirect to 'home' or any other route
         } catch (\Throwable $e) {
             
+             // Log the error
+        Log::error('Journalist Registration Error: ' . $e->getMessage(), [
+            'stack' => $e->getTraceAsString(),
+            // You can also log additional data if necessary
+            'input' => $request->all(),
+        ]);
             // If there was an error, return an error response
             return back()->withErrors(['upload_error' => 'Error uploading image.'])->with('message', 'Error uploading image');
         }

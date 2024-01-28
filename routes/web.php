@@ -55,7 +55,6 @@ Route::get('/journalist_dashboard', [ArticleController::class, 'journalistDashbo
 
 
 // -- Admin pages routes published-articles
-Route::get('/upload-form', [RegisterJournalistController::class, 'showForm']);
 Route::post('/upload-journalist', [RegisterJournalistController::class, 'registerJournalist'])
 ->name('upload.journalist');
 
