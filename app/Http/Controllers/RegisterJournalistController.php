@@ -58,7 +58,7 @@ class RegisterJournalistController extends Controller
             'lastName' => 'required|string',
             'email' => 'required|email',
             'password' => 'required|min:6',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
     
         try {
