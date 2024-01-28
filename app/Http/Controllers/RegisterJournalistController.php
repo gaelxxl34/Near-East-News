@@ -19,8 +19,25 @@ class RegisterJournalistController extends Controller
     protected $auth;
 
     public function __construct()
-    {    
-        $firebaseFactory = (new Factory)->withServiceAccount(env('FIREBASE_CREDENTIALS'))->withDatabaseUri(env('FIREBASE_DATABASE_URL'));
+    {
+        if (env('FIREBASE_CREDENTIALS_BASE64')) {
+            $firebaseCredentialsJson = base64_decode(env('FIREBASE_CREDENTIALS_BASE64'));
+            if (!$firebaseCredentialsJson) {
+                throw new \Exception('Failed to decode FIREBASE_CREDENTIALS_BASE64');
+            }
+            $serviceAccount = json_decode($firebaseCredentialsJson, true);
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                throw new \Exception('Failed to decode JSON: ' . json_last_error_msg());
+            }
+        } else {
+            $firebaseCredentialsPath = env('FIREBASE_CREDENTIALS');
+            if (!$firebaseCredentialsPath || !file_exists($firebaseCredentialsPath)) {
+                throw new \Exception('Firebase credentials file path is not set or file does not exist');
+            }
+            $serviceAccount = $firebaseCredentialsPath;
+        }
+    
+        $firebaseFactory = (new Factory)->withServiceAccount($serviceAccount)->withDatabaseUri(env('FIREBASE_DATABASE_URL'));
     
         $this->auth = $firebaseFactory->createAuth();
     }
@@ -34,7 +51,6 @@ class RegisterJournalistController extends Controller
     }
     public function registerJournalist(Request $request)
     {
-        \Log::info("registerJournalist called");
         $request->validate([
             'firstName' => 'required|string',
             'lastName' => 'required|string',
@@ -79,7 +95,7 @@ class RegisterJournalistController extends Controller
             // Return success response
             return redirect()->intended('/admin/journalist-list'); // Redirect to 'home' or any other route
         } catch (\Throwable $e) {
-            \Log::error('Error in registerJournalist: ' . $e->getMessage());
+            
             // If there was an error, return an error response
             return back()->withErrors(['upload_error' => 'Error uploading image.'])->with('message', 'Error uploading image');
         }
