@@ -72,9 +72,9 @@ class RegisterJournalistController extends Controller
             ];
     
            
-    
+            Log::info('before user creation');
             $createdUser = $this->auth->createUser($userProperties);
-    
+            Log::info('after user creation');
             // Initialize Firebase Storage
             $storage = app('firebase.storage');
             $bucket = $storage->getBucket(); // Use the default bucket

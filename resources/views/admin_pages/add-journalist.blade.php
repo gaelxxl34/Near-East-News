@@ -106,7 +106,7 @@
                         
                         <div class="form-group">
                             <label for="image">Choose Image:</label>
-                            <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+                            <input type="file" name="image" id="image" class="form-control" required>
                         </div>
                      
 
