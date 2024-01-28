@@ -11,7 +11,7 @@ use Kreait\Firebase\Auth\UserRecord;
 use App\Http\Controllers\Controller;
 use Kreait\Firebase\Firestore;
 use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Log;
+
 
 
 
@@ -97,13 +97,6 @@ class RegisterJournalistController extends Controller
             // Return success response
             return redirect()->intended('/admin/journalist-list'); // Redirect to 'home' or any other route
         } catch (\Throwable $e) {
-            
-             // Log the error
-        Log::error('Journalist Registration Error: ' . $e->getMessage(), [
-            'stack' => $e->getTraceAsString(),
-            // You can also log additional data if necessary
-            'input' => $request->all(),
-        ]);
             // If there was an error, return an error response
             return back()->withErrors(['upload_error' => 'Error uploading image.'])->with('message', 'Error uploading image');
         }
