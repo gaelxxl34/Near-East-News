@@ -53,6 +53,7 @@ class RegisterJournalistController extends Controller
     }
     public function registerJournalist(Request $request)
     {
+        Log::info('Entering registerJournalist method.');
         $request->validate([
             'firstName' => 'required|string',
             'lastName' => 'required|string',
@@ -100,6 +101,7 @@ class RegisterJournalistController extends Controller
             // If there was an error, return an error response
             return back()->withErrors(['upload_error' => 'Error uploading image.'])->with('message', 'Error uploading image');
         }
+        Log::info('After validation');
     }
 
 
