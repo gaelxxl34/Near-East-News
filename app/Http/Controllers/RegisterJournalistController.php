@@ -11,7 +11,7 @@ use Kreait\Firebase\Auth\UserRecord;
 use App\Http\Controllers\Controller;
 use Kreait\Firebase\Firestore;
 use Illuminate\Support\Facades\View;
-
+use Illuminate\Support\Facades\Log;
 
 
 
