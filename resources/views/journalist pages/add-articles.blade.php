@@ -108,7 +108,8 @@
                                         <option value="Algeria">Algeria</option>
                                         <option value="Iran">Iran</option>
                                         <option value="Iraq">Iraq</option>
-                                        
+                                        <option value="Palestine">Palestine</option>
+                                        <option value="Palestine (Occupied Territoties)">Palestine (Occupied Territoties)</option>
                                         <option value="Jordan">Jordan</option>
                                         <option value="Libya">Libya</option>
                                         <option value="Bahrain">Bahrain</option>
