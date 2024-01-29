@@ -124,11 +124,10 @@
                                 <div class="form-group">
                                     <label for="category">Category:</label>
                                     <select name="category" id="category" class="form-control" required>
-                                        <option value="Top Stories">Top Stories</option>
+                                        <option value="Top News">Top News</option>
                                         <option value="Highlights">Highlights</option>
-                                        <option value="Business">Business</option>
-                                        <option value="Corporate">Corporate</option>
-                                        <option value="Sports">Sports</option>
+                                        <option value="Politics">Politics</option>
+                                        <option value="Economy">Economy</option>
                                     </select>
                                 </div>
 
