@@ -100,7 +100,7 @@
                 <div class="card shadow">
                     <div class="card-body">
 
-                    <form  method="post" action="{{ route('upload.journalist') }}" enctype="multipart/form-data">
+                    <form action="{{ route('upload.journalist') }}" method="post" enctype="multipart/form-data">
                         @csrf
 
                         

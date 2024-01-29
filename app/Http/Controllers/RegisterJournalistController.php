@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Log;
 
 
 
-
 class RegisterJournalistController extends Controller
 {
     protected $auth;
@@ -53,7 +52,6 @@ class RegisterJournalistController extends Controller
     }
     public function registerJournalist(Request $request)
     {
-        Log::info('Entering registerJournalist method.');
         $request->validate([
             'firstName' => 'required|string',
             'lastName' => 'required|string',
@@ -72,9 +70,9 @@ class RegisterJournalistController extends Controller
             ];
     
            
-            Log::info('before user creation');
+    
             $createdUser = $this->auth->createUser($userProperties);
-            Log::info('after user creation');
+    
             // Initialize Firebase Storage
             $storage = app('firebase.storage');
             $bucket = $storage->getBucket(); // Use the default bucket
@@ -101,7 +99,6 @@ class RegisterJournalistController extends Controller
             // If there was an error, return an error response
             return back()->withErrors(['upload_error' => 'Error uploading image.'])->with('message', 'Error uploading image');
         }
-        Log::info('After validation');
     }
 
 
