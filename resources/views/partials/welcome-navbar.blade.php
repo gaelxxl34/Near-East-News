@@ -5,12 +5,12 @@
         <!-- Logo Section -->
         <div class="col-lg-4 d-none d-lg-block bg-black">
             <a href="" class="navbar-brand">
-                <img src="../assets/img/logo.png" alt="Your Logo" class="img-fluid" style="max-height: 300px; max-width: 400px; margin-left: -70px">
+                <img src="/assets/img/logo.png" alt="Your Logo" class="img-fluid" style="max-height: 300px; max-width: 400px; margin-left: -70px">
             </a>
             </div>
             <div class="col-lg-8 text-center text-lg-right">
-                <a href="{{ route('login') }}"><button class="btn btn-dark">Login</button></a>
-                <a href="register"><button class="btn btn-dark">Sign Up</button></a>
+                <a href="{{ route('login') }}" style="font-family: 'Georgia', serif;"><button class="btn btn-dark">Login</button></a>
+                <a href="register" style="font-family: 'Georgia', serif;"><button class="btn btn-dark">Sign Up</button></a>
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
     <div class="container-fluid p-0 mb-5">
         <nav class="navbar navbar-expand-lg bg-white navbar-light py-2 py-lg-0 px-lg-5">
             <a href="welcome" class="navbar-brand d-block d-lg-none ">
-                <img src="../assets/img/logo.png" alt="Your Logo"  class="img-fluid" style="max-width: 270px; margin-left: -40px">
+                <img src="/assets/img/logo.png" alt="Your Logo"  class="img-fluid" style="max-width: 270px; margin-left: -40px">
             </a>
 
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">

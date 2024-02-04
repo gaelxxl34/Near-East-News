@@ -152,7 +152,7 @@ Route::get('/edit-journalist/{id}',[RegisterJournalistController::class, 'editJo
 
 
 // user pages routes
-Route::get('/home', [UserArticleController::class, 'UserPublishedArticleList'])
+Route::get('/home', [UserArticleController::class, 'ArticlesOverview'])
 ->name('home');
 
 
@@ -171,6 +171,12 @@ Route::get('/user/contact', function () {
 Route::get('/user/favorite', function () {
     return view('user pages.favorite');
 })->name('user.favorite');
+
+Route::get('/user/full-article/{articleId}', [UserArticleController::class, 'fullArticle'])
+    ->name('user.full-article');
+
+Route::post('/user/full-article/{articleId}', [UserArticleController::class, 'fullArticle'])
+    ->name('user.full-article');
 // -- end of user pages 
 
 
@@ -187,11 +193,11 @@ Route::get('/user/favorite', function () {
 
 
 
-Route::get('/', [NoneUserController::class, 'NonePublishedArticleList'])
+Route::get('/', [NoneUserController::class, 'ArticlesOverview'])
 ->name('welcome');
 
 
-Route::get('/welcome', [NoneUserController::class, 'NonePublishedArticleList'])
+Route::get('/welcome', [NoneUserController::class, 'ArticlesOverview'])
 ->name('welcome');
 
 
@@ -200,6 +206,11 @@ Route::get('/welcome', [NoneUserController::class, 'NonePublishedArticleList'])
 Route::get('/welcome-categories', [NoneUserController::class, 'CategoriesArticles'])
 ->name('welcome.categories');
 
+Route::get('/welcome/full-article/{articleId}', [NoneUserController::class, 'fullArticle'])
+    ->name('welcome.full-article');
+
+Route::post('/welcome/full-article/{articleId}', [NoneUserController::class, 'fullArticle'])
+    ->name('welcome.full-article');
 
 Route::get('/welcome-contact', function () {
     return view('welcome_pages.welcome_contact');

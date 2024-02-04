@@ -49,7 +49,7 @@
                         <div class="owl-carousel owl-carousel-3 carousel-item-1 position-relative">
                             @foreach ($articles as $article)
                                 <div class="position-relative " >
-                                    <img class="img-fluid w-100 article-container" src="{{ $article['image_path'] }}" style="object-fit: cover;">
+                                    <img class="img-fluid w-100 article-container" src="{{ $article['image_path'] }}" style="height: 350px; object-fit: cover;">
                                     <div class="overlay position-relative bg-light">
                                         <div class="mb-2" style="font-size: 13px;">
                                             <a href="">{{ $article['category'] }}</a>

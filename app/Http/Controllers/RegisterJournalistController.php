@@ -250,6 +250,8 @@ class RegisterJournalistController extends Controller
         }
     }
     
+
+    
     
 
 }

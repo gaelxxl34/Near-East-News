@@ -87,7 +87,7 @@
                                             <!-- Third Section: Description -->
                                             <div class="card-body">
                                                 <h5 class="card-title">{{ $article['title'] }}</h5>
-                                                <p class="card-text">{{ $article['short_description'] }}</p>
+                                                <div class="card-text">{!! $article['short_description'] !!}</div>
                                             </div>
 
                                             <!-- Fourth Section: button -->

@@ -49,14 +49,14 @@
                         <div class="owl-carousel owl-carousel-3 carousel-item-1 position-relative">
                             @foreach ($articles as $article)
                                 <div class="position-relative " >
-                                    <img class="img-fluid w-100 article-container" src="{{ $article['image_path'] }}" style="object-fit: cover;">
+                                    <img class="img-fluid w-100 article-container" src="{{ $article['image_path'] }}" style="height: 350px; object-fit: cover;">
                                     <div class="overlay position-relative bg-light">
                                         <div class="mb-2" style="font-size: 13px;">
                                             <a href="">{{ $article['category'] }}</a>
                                             <span class="px-1">/</span>
                                             <span>{{ date('F d, Y', strtotime($article['created_at'])) }}</span>
                                         </div>
-                                        <a class="h4 m-0" href="">{{ $article['title'] }}</a>
+                                        <a class="h4 m-0" href="{{ route('user.full-article', ['articleId' => $article['id']]) }}">{{ $article['title'] }}</a>
                                     </div>
                                 </div>
                             @endforeach

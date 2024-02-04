@@ -13,9 +13,10 @@
         <style>
             /* Custom styles */
             .custom-card {
-                width: 350px;
+             
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             }
+
         </style>
 
     <title>Publised Articles</title>
@@ -80,7 +81,7 @@
 
                                 <!-- Second Section: Article Picture -->
                                 @if ($article['image_path'])
-                                    <img src="{{ $article['image_path'] }}" alt="User" class="card-img-top border-0" style="max-height: 400px;">
+                                    <img src="{{ $article['image_path'] }}" alt="User" class="card-img-top border-0" style="height: 350px; object-fit: cover;">
                                 @else
                                     <span>No Picture</span>
                                 @endif
@@ -88,7 +89,7 @@
                                 <!-- Third Section: Description -->
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $article['title'] }}</h5>
-                                    <p class="card-text">{{ $article['short_description'] }}</p>
+                                    <div class="card-text ">{!! $article['short_description'] !!}</div>
                                 </div>
 
                                 <!-- Fourth Section: button -->

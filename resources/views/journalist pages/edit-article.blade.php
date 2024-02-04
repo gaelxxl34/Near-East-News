@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
         <style>
         /* Custom styles */
@@ -109,13 +109,15 @@
                                 <option value="Egypt" {{ $article['region'] == 'Egypt' ? 'selected' : '' }}>Egypt</option>
                                 <option value="Algeria" {{ $article['region'] == 'Algeria' ? 'selected' : '' }}>Algeria</option>
                                 <option value="Iran" {{ $article['region'] == 'Iran' ? 'selected' : '' }}>Iran</option>
+                                <option value="Palestine" {{ $article['region'] == 'Palestine' ? 'selected' : '' }}>Palestine</option>
+                                <option value="Palestine (Occupied Territoties)" {{ $article['region'] == 'Palestine (Occupied Territoties)' ? 'selected' : '' }}>Palestine (Occupied Territoties)</option>
                                 <option value="Iraq" {{ $article['region'] == 'Iraq' ? 'selected' : '' }}>Iraq</option>
-                                <option value="Israel" {{ $article['region'] == 'Israel' ? 'selected' : '' }}>Israel</option>
                                 <option value="Jordan" {{ $article['region'] == 'Jordan' ? 'selected' : '' }}>Jordan</option>
                                 <option value="Libya" {{ $article['region'] == 'Libya' ? 'selected' : '' }}>Libya</option>
                                 <option value="Bahrain" {{ $article['region'] == 'Bahrain' ? 'selected' : '' }}>Bahrain</option>
                                 <option value="Qatar" {{ $article['region'] == 'Qatar' ? 'selected' : '' }}>Qatar</option>
                                 <option value="Saudi Arabia" {{ $article['region'] == 'Saudi Arabia' ? 'selected' : '' }}>Saudi Arabia</option>
+                                <option value="Israel" {{ $article['region'] == 'Israel' ? 'selected' : '' }}>Israel</option>
                                 <option value="Yemen" {{ $article['region'] == 'Yemen' ? 'selected' : '' }}>Yemen</option>
                                 <option value="Syrian Arab Republic" {{ $article['region'] == 'Syrian Arab Republic' ? 'selected' : '' }}>Syrian Arab Republic</option>
                             </select>
@@ -125,18 +127,11 @@
                         <div class="mb-3">
                             <label for="category" class="form-label">Category</label>
                             <select name="category" id="category" class="form-control" required>
+                                <option value="Top News" {{ $article['category'] == 'Top News' ? 'selected' : '' }}>Top News</option>
+                                <option value="Highlights" {{ $article['category'] == 'Highlights' ? 'selected' : '' }}>Highlights</option>
                                 <option value="Politics" {{ $article['category'] == 'Politics' ? 'selected' : '' }}>Politics</option>
-                                <option value="Business" {{ $article['category'] == 'Business' ? 'selected' : '' }}>Business</option>
-                                <option value="Corporate" {{ $article['category'] == 'Corporate' ? 'selected' : '' }}>Corporate</option>
-                                <option value="Sports" {{ $article['category'] == 'Sports' ? 'selected' : '' }}>Sports</option>
-                                <option value="Health" {{ $article['category'] == 'Health' ? 'selected' : '' }}>Health</option>
-                                <option value="Education" {{ $article['category'] == 'Education' ? 'selected' : '' }}>Education</option>
-                                <option value="Science" {{ $article['category'] == 'Science' ? 'selected' : '' }}>Science</option>
-                                <option value="Technology" {{ $article['category'] == 'Technology' ? 'selected' : '' }}>Technology</option>
-                                <option value="Foods" {{ $article['category'] == 'Foods' ? 'selected' : '' }}>Foods</option>
-                                <option value="Entertainment" {{ $article['category'] == 'Entertainment' ? 'selected' : '' }}>Entertainment</option>
-                                <option value="Travel" {{ $article['category'] == 'Travel' ? 'selected' : '' }}>Travel</option>
-                                <option value="Lifestyle" {{ $article['category'] == 'Lifestyle' ? 'selected' : '' }}>Lifestyle</option>
+                                <option value="Economy" {{ $article['category'] == 'Economy' ? 'selected' : '' }}>Economy</option>
+                                <option value="Conflict Zones" {{ $article['category'] == 'Conflict Zones' ? 'selected' : '' }}>Conflict Zones</option>
                             </select>
                         </div>
 
@@ -178,6 +173,14 @@
 
         </div>
 
+
+        <script>
+            CKEDITOR.replace('shortDescription');
+        </script>
+
+        <script>
+            CKEDITOR.replace('fullDescription');
+        </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
         crossorigin="anonymous"></script>
@@ -201,7 +204,21 @@
 
     </script>
 
-   
+<script>
+    // Function to estimate reading time based on average words per minute
+    function estimateReadingTime() {
+        const wordsPerMinute = 200; // Adjust this value based on your content
+        const fullDescription = document.getElementById('fullDescription').value;
+        const wordCount = fullDescription.split(/\s+/).length;
+
+        const readingTime = Math.ceil(wordCount / wordsPerMinute);
+
+        document.getElementById('readingTime').value = readingTime;
+    }
+
+    // Add an event listener to the full description textarea to update reading time
+    document.getElementById('fullDescription').addEventListener('input', estimateReadingTime);
+</script>
 @endsection
 </body>
 

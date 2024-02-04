@@ -7,9 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/ae360af17e.js" crossorigin="anonymous"></script>
-
+    <link href="assets\css\style.css" rel="stylesheet">
         <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
         <style>
+        
+
         /* Custom styles */
         .custom-card {
             width: 350px;
@@ -74,7 +76,7 @@
                                             
                                                 <div class="ms-3">
                                                 <p class="text-muted mb-0">
-                                                    Published <span class="fw-bold">{{ \Carbon\Carbon::parse($article['created_at'])->diffForHumans() }}</span>
+                                                    Added <span class="fw-bold">{{ \Carbon\Carbon::parse($article['created_at'])->diffForHumans() }}</span>
                                                 </p>
 
                                                 </div>
@@ -90,7 +92,9 @@
                                             <!-- Third Section: Description -->
                                             <div class="card-body">
                                                 <h5 class="card-title">{{ $article['title'] }}</h5>
-                                                <p class="card-text">{{ $article['short_description'] }}</p>
+                                                <div class="card-text">{!! $article['short_description'] !!}</div>
+
+
                                             </div>
 
                                             <!-- Fourth Section: button -->

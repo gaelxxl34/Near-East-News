@@ -81,8 +81,8 @@
                             <!-- Third Section: Description -->
                             <div class="card-body">
                                 <h4 class="card-title">{{ $article['title'] }}</h4>
-                                <h6 class="card-text">{{ $article['short_description'] }}</h6>
-                                <p class="card-text">{{ $article['full_description'] }}</p>
+                                <div class="card-text">{!! $article['short_description'] !!}</div>
+                                <div class="card-text">{!! $article['full_description'] !!}</div>
                             </div>
 
                             <!-- Fourth Section: Read More -->
