@@ -56,7 +56,7 @@
                                             <span class="px-1">/</span>
                                             <span>{{ date('F d, Y', strtotime($article['created_at'])) }}</span>
                                         </div>
-                                        <a class="h4 m-0" href="">{{ $article['title'] }}</a>
+                                        <a class="h4 m-0" href="{{ route('user.full-article', ['articleId' => $article['id']]) }}">{{ $article['title'] }}</a>
                                     </div>
                                 </div>
                             @endforeach
