@@ -61,7 +61,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-xl-5 col-md-8">
-                    <div class="bg-white rounded-5 shadow-5-strong p-5">
+                    <div class="bg-white rounded-5 shadow-5-strong p-5"  style="font-family: 'Montserrat';">
                         <!-- Reset Password Header -->
                         <h2 class="text-center mb-4">Reset Password</h2>
 

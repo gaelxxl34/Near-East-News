@@ -14,15 +14,15 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h6 class=" mb-4" style="color: white;">TOPICS</h6>
-                <div class="d-flex flex-wrap m-n1">
+                <h6 class=" mb-4" style="color: white; font-family: 'Montserrat';">TOPICS</h6>
+                <div class="d-flex flex-wrap m-n1" style="font-family: 'Open Sans';">
                     <a href="" class="btn btn-sm btn-outline-secondary m-1" >CONFICT ZONE</a>
                     
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-5">
-                <h6 class="font-weight-bold mb-4" style="color: white;">REGIONS</h6>
-                <div class="d-flex flex-column justify-content-start">
+                <h6 class="font-weight-bold mb-4" style="color: white; font-family: 'Montserrat';">REGIONS</h6>
+                <div class="d-flex flex-column justify-content-start" style="font-family: 'Open Sans';">
                     <a class="text-light mb-2" href="#"><i class="fa fa-angle-right text-light mr-2"></i>United Arab Emirates</a>
                     <a class="text-light mb-2" href="#"><i class="fa fa-angle-right text-light mr-2"></i>Egypt</a>
                     <a class="text-light mb-2" href="#"><i class="fa fa-angle-right text-light mr-2"></i>Algeria</a>
@@ -42,8 +42,8 @@
 
 
             <div class="col-lg-3 col-md-6 mb-5">
-                <h6 class="font-weight-bold mb-4" style="color: white;">CATEGORIES</h6>
-                <div class="d-flex flex-column justify-content-start">
+                <h6 class="font-weight-bold mb-4" style="color: white; font-family: 'Montserrat';">CATEGORIES</h6>
+                <div class="d-flex flex-column justify-content-start" style="font-family: 'Open Sans';">
                     <a class="text-light mb-2" href="#"><i class="fa fa-angle-right text-light mr-2"></i>Economy</a>
                     <a class="text-light mb-2" href="#"><i class="fa fa-angle-right text-light mr-2"></i>Politics</a>
                 </div>
@@ -52,7 +52,7 @@
     </div>
 
     <div class="container-fluid py-4 px-sm-3 px-md-5">
-        <p class="m-0 text-center">
+        <p class="m-0 text-center" style="font-family: 'Open Sans';">
             &copy; <a class="font-weight-bold" style="color: red;" href="#">Near East News</a>. All Rights Reserved. 
 			
 			<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->

@@ -9,8 +9,8 @@
             </a>
             </div>
             <div class="col-lg-8 text-center text-lg-right">
-                <a href="{{ route('login') }}" style="font-family: 'Georgia', serif;"><button class="btn btn-dark">Login</button></a>
-                <a href="register" style="font-family: 'Georgia', serif;"><button class="btn btn-dark">Sign Up</button></a>
+                <a href="{{ route('login') }}" style="font-family: 'Montserrat';"><button class="btn btn-dark">Login</button></a>
+                <a href="register" style="font-family: 'Montserrat';"><button class="btn btn-dark">Sign Up</button></a>
             </div>
         </div>
     </div>
@@ -27,7 +27,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
-                <div class="navbar-nav mr-auto py-0">
+                <div class="navbar-nav mr-auto py-0" style="font-family: 'Montserrat';">
 
                 <a href="{{ route('welcome') }}" class="nav-item nav-link {{ request()->routeIs('welcome') ? 'active' : '' }}">Home</a>
 

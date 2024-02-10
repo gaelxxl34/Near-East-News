@@ -47,13 +47,13 @@
         <div class="card custom-card p-3" style="background-color: white; border: none;">
             <!-- First Section: Published Time -->
             <div class="card-header" style=" border: none;">
-                <p class="text-muted mb-0" style="font-size: 14px">
+                <p class="text-muted mb-0" style="font-size: 14px; font-family: 'Open Sans';">
                     <span class="fw-bold">{{ \Carbon\Carbon::parse($article['created_at'])->diffForHumans() }} - {{ $article['category'] }}</span>
                 </p>
             </div>
 
             <!-- Second Section: Title -->
-            <h1 class="mt-3" style="max-width: 800px; font-weight: 400; font-family: 'Garamond', serif;">{{ $article['title'] }}</h1>
+            <h1 class="mt-3" style="max-width: 800px; font-weight: 400; font-family: Montserrat;">{{ $article['title'] }}</h1>
 
 
             <!-- Third Section: User Info -->
@@ -61,7 +61,7 @@
                 <img src="{{ $user['profile_picture'] }}" alt="Journalist Avatar" class="rounded-circle" style="width: 30px; height: 30px; object-fit: cover;">
                 <div class="ms-3 mt-3">
                     @if (isset($user['firstName']))
-                        <h6 class="mb-3 ml-2" style="font-size: 14px; font-family: 'Georgia', serif;">{{ $user['firstName'] }} {{ $user['lastName'] }}</h6>
+                        <h6 class="mb-3 ml-2" style="font-size: 14px; font-family: 'Open Sans';">{{ $user['firstName'] }} {{ $user['lastName'] }}</h6>
                     @else
                         <p class="mb-0">Unknown Journalist</p>
                     @endif
@@ -75,8 +75,8 @@
                         <span>No Picture</span>
                     @endif
             <!-- Fifth Section: Descriptions -->
-            <div class="card-text mt-3" style="font-family: 'Georgia', serif; max-width: 800px; color: #333; ">{!! $article['short_description'] !!}</div>
-            <div class="card-text mt-3" style="font-family: 'Georgia', serif; max-width: 800px; color: #333; ">{!! $article['full_description'] !!}</div>
+            <div class="card-text mt-3" style="font-family: 'Open Sans'; max-width: 800px; color: #333; ">{!! $article['short_description'] !!}</div>
+            <div class="card-text mt-3" style="font-family: 'Open Sans'; max-width: 800px; color: #333; ">{!! $article['full_description'] !!}</div>
 
 
         </div>

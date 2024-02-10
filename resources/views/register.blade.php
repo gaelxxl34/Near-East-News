@@ -63,7 +63,7 @@
                 <div class="col-xl-5 col-md-8">
 
 
-                <div class="bg-white rounded-5 shadow-5-strong p-1">
+                <div class="bg-white rounded-5 shadow-5-strong p-1"  style="font-family: 'Montserrat';">
                     <!-- Simple Text Header -->
                     <h2 class="text-center mb-0 ">Register</h2>
 

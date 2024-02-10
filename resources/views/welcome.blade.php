@@ -29,7 +29,7 @@
     <style>
 
         .large-margin-bottom {
-            margin-bottom: 80px; /* Adjust this value as needed */
+            margin-bottom: 90px; /* Adjust this value as needed */
         }
 
 
@@ -49,7 +49,7 @@
             <!-- Left Column for Latest News -->
         
             <div class="col-md-4 border-right pl-md-5 ">
-                <h4 class="mb-3" style="font-family: 'Garamond', serif;">Latest stories</h4>
+                <h4 class="mb-3" style="font-family: 'Montserrat';">Latest stories</h4>
                 <div class="latest-news mb-5" >
                     
                 <!-- News Item 1 -->
@@ -60,8 +60,8 @@
                                 <div class="d-flex mb-3">
                                     <img src="{{ $topnew['image_path'] }}" class="mr-3" style="width: 100px; height: 100px; object-fit: cover;">
                                     <div>
-                                        <h6 style="font-family: 'Georgia', serif;">{{ $articleNumber }}. {{ $topnew['title'] }}</h6>
-                                        <p>{{ \Carbon\Carbon::parse($topnew['created_at'])->diffForHumans() }} - {{ $topnew['category'] }}</p>
+                                        <h6 style="font-family: 'Open Sans';">{{ $articleNumber }}. {{ $topnew['title'] }}</h6>
+                                        <p style="font-family: 'Open Sans';">{{ \Carbon\Carbon::parse($topnew['created_at'])->diffForHumans() }} - {{ $topnew['category'] }}</p>
                                     </div>
                                 </div>
                             </a>
@@ -78,15 +78,15 @@
                 
 <hr>
 
-                <h4 class="mb-3" style="font-family: 'Garamond', serif;">Top 5 Highlights</h4>
+                <h4 class="mb-3" style="font-family: 'Montserrat';">Top 5 Highlights</h4>
                 <div class="top-news">
                     @foreach ($highlight as $categoryName => $highlights)
                         @foreach ($highlights as $highlight) <!-- Loop through articles in this category -->
                         <a href="{{ route('welcome.full-article', ['articleId' => $highlight['id']]) }}" class="text-decoration-none text-dark"> <!-- Update this href with your target URL -->
                              
                             <div>
-                                <h6 style="font-family: 'Georgia', serif;">{{ $highlight['title'] }}</h6>
-                                <p>{{ \Carbon\Carbon::parse($highlight['created_at'])->diffForHumans() }}</p>
+                                <h6 style="font-family: 'Open Sans';">{{ $highlight['title'] }}</h6>
+                                <p style="font-family: 'Open Sans';">{{ \Carbon\Carbon::parse($highlight['created_at'])->diffForHumans() }}</p>
                             </div>
                         </a>
                         <hr>
@@ -113,7 +113,7 @@
 
 
                         @if (isset($article['firstName']))
-                                            <h6 class="mb-0" style="font-size: 14px; font-family: 'Georgia', serif;">{{ $article['firstName'] }} {{ $article['lastName'] }}</h6>
+                                            <h6 class="mb-0" style="font-size: 14px; font-family: 'Open Sans';">{{ $article['firstName'] }} {{ $article['lastName'] }}</h6>
                                         @else
                                             <p class="mb-0">Unknown Journalist</p>
                                         @endif
@@ -121,25 +121,25 @@
                         </div>
 
                     </div>
+                    <a href="{{ route('welcome.full-article', ['articleId' => $article['id']]) }}" class="text-primary" style="text-decoration: none;">
+                        <!-- Article Title -->
+                        <h1 class="mt-3" style="max-width: 800px; font-weight: 400; font-family: 'Montserrat';">{{ $article['title'] }}</h1>
 
-                    <!-- Article Title -->
-                    <h1 class="mt-3" style="max-width: 800px; font-weight: 400; font-family: 'Garamond', serif;">{{ $article['title'] }}</h1>
 
+                        <!-- Article Image -->
 
-                    <!-- Article Image -->
-
-                @if ($article['image_path'])
-                        <img src="{{ $article['image_path'] }}" alt="User" class="card-img-top border-0" style="max-height: 500px; max-width: 800px;">
-                    @else
-                        <span>No Picture</span>
-                    @endif
-
+                    @if ($article['image_path'])
+                            <img src="{{ $article['image_path'] }}" alt="User" class="card-img-top border-0" style="max-height: 500px; max-width: 800px;">
+                        @else
+                            <span>No Picture</span>
+                        @endif
+                    </a>
 
                     <!-- Short Description -->
-                    <div class="card-text mt-3" style="font-family: 'Georgia', serif; max-width: 800px; color: #333;">{!! $article['short_description'] !!}</div>
+                    <div class="card-text mt-3" style="font-family: 'Open Sans'; max-width: 800px; color: #333;">{!! $article['short_description'] !!}</div>
 
                     <!-- Read More Link -->
-                    <p><a href="{{ route('welcome.full-article', ['articleId' => $article['id']]) }}" class="text-primary">Go deeper ({{ $article['reading_time'] }} min. read) <span>&rarr;</span></a></p>
+                    <p style="font-family: 'Open Sans';"><a href="{{ route('welcome.full-article', ['articleId' => $article['id']]) }}" class="text-primary">Go deeper ({{ $article['reading_time'] }} min. read) <span>&rarr;</span></a></p>
                 </div>
                 @empty
                     <div class="col">

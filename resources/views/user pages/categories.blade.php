@@ -44,7 +44,7 @@
                 @foreach ($articlesByCategory as $category => $articles)
                     <div class="col-lg-6 py-3">
                         <div class="bg-light py-2 px-4 mb-3">
-                            <h3 class="m-0">{{ $category }}</h3>
+                            <h3 class="m-0" style="font-family: 'Montserrat';">{{ $category }}</h3>
                         </div>
                         <div class="owl-carousel owl-carousel-3 carousel-item-1 position-relative">
                             @foreach ($articles as $article)
@@ -56,7 +56,7 @@
                                             <span class="px-1">/</span>
                                             <span>{{ date('F d, Y', strtotime($article['created_at'])) }}</span>
                                         </div>
-                                        <a class="h4 m-0" href="{{ route('user.full-article', ['articleId' => $article['id']]) }}">{{ $article['title'] }}</a>
+                                        <a class="h4 m-0" href="{{ route('user.full-article', ['articleId' => $article['id']]) }}" style="font-family: 'Montserrat';">{{ $article['title'] }}</a>
                                     </div>
                                 </div>
                             @endforeach

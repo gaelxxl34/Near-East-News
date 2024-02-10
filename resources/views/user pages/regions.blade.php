@@ -44,19 +44,21 @@
                 @foreach ($articlesByRegion as $region => $articles)
                     <div class="col-lg-6 py-3">
                         <div class="bg-light py-2 px-4 mb-3">
-                            <h3 class="m-0">{{ $region }}</h3>
+                            <h3 class="m-0" style="font-family: 'Montserrat';">{{ $region }}</h3>
                         </div>
                         <div class="owl-carousel owl-carousel-3 carousel-item-1 position-relative">
                             @foreach ($articles as $article)
                                 <div class="position-relative " >
-                                    <img class="img-fluid w-100 article-container" src="{{ $article['image_path'] }}" style="height: 350px; object-fit: cover;">
-                                    <div class="overlay position-relative bg-light">
+                                    <a class="h4 m-0" href="{{ route('user.full-article', ['articleId' => $article['id']]) }}">
+                                        <img class="img-fluid w-100 article-container" src="{{ $article['image_path'] }}" style="height: 350px; object-fit: cover;">
+                                    </a>
+                                        <div class="overlay position-relative bg-light">
                                         <div class="mb-2" style="font-size: 13px;">
                                             <a href="">{{ $article['category'] }}</a>
                                             <span class="px-1">/</span>
                                             <span>{{ date('F d, Y', strtotime($article['created_at'])) }}</span>
                                         </div>
-                                        <a class="h4 m-0" href="{{ route('user.full-article', ['articleId' => $article['id']]) }}">{{ $article['title'] }}</a>
+                                        <a class="h4 m-0" href="{{ route('user.full-article', ['articleId' => $article['id']]) }}" style="font-family: 'Montserrat';">{{ $article['title'] }}</a>
                                     </div>
                                 </div>
                             @endforeach

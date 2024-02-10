@@ -49,7 +49,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-between px-0 px-lg-3" id="navbarCollapse">
-            <div class="navbar-nav mr-auto py-0">
+            <div class="navbar-nav mr-auto py-0" style="font-family: 'Montserrat';">
                 <a href="{{ route('home') }}" class="nav-item nav-link {{ request()->routeIs('home') ? 'active' : '' }}">Home</a>
                 <a href="{{ route('user.categories') }} " class="nav-item nav-link {{ request()->routeIs('user.categories') ? 'active' : '' }}">Categories</a>
                 <a href="{{ route('user.regions') }}" class="nav-item nav-link {{ request()->routeIs('user.regions') ? 'active' : '' }}">Regions</a>
@@ -76,8 +76,8 @@
 <div id="dialogBackdrop" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1050; align-items: center; justify-content: center;">
     <div style="background: white; padding: 20px; border-radius: 5px; max-width: 500px; width: 100%; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); text-align: center;">
         <img src="/assets/img/logo.png" alt="Logo" style="max-width: 300px;"> <!-- Logo -->
-        <h4 style="margin-top: 20px;">AI Functionality Coming Soon!</h4>
-        <p>We're working hard to bring you the AI features. Stay tuned!</p>
+        <h4 style="margin-top: 20px; font-family: 'Montserrat';">AI Functionality Coming Soon!</h4>
+        <p style="font-family: 'Open Sans';">We're working hard to bring you the AI features. Stay tuned!</p>
         <button id="closeDialog" style="margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px;">OK</button>
     </div>
 </div>
